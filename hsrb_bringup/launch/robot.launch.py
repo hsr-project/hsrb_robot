@@ -49,7 +49,6 @@ def generate_launch_description():
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([ThisLaunchFileDir(), '/hsr_base.py']),
                 launch_arguments={'use_head_center_camera': 'False',
-                                  'description_package': 'hsrc_description',
                                   'description_file': 'hsrc1s.urdf.xacro',
                                   'timeopt_ros_launch_file': 'launch/hsrc_timeopt_filter.launch.py',
                                   'planner_launch_file': 'launch/hsrc_planner.launch.py'
