@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2024 TOYOTA MOTOR CORPORATION
+# Copyright (c) 2026 TOYOTA MOTOR CORPORATION
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the disclaimer
@@ -54,7 +54,7 @@ def generate_launch_description():
     if robot_name == 'hsrb':
         battery_state_node = Node(package='tmc_sanyo_battery', executable='sanyo_battery_node')
         digital_io_node = Node(package='hsrb_digital_io', executable='digital_io_node')
-        # I feel that it is correct for the IMU to start at the same timing as the camera system, but in HSR-C, the power ECU controls it, so it starts here to align the startup timing.
+        # I feel that the IMU should start at the same timing as the camera system, but in HSR-C, the power ECU controls it, so it starts here to synchronize the startup timing.
         imu_node = Node(package='hsrb_imu_sensor_protocol', executable='mpu9150_node',
                         remappings=[('base_imu', '/imu/data')])
         return LaunchDescription([battery_state_node, digital_io_node, imu_node] + common_nodes)

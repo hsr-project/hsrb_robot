@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2024 TOYOTA MOTOR CORPORATION
+# Copyright (c) 2026 TOYOTA MOTOR CORPORATION
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the disclaimer
@@ -70,7 +70,7 @@ def declare_arguments():
 
 
 def generate_launch_description():
-    # If a node has a parameter_file, it will be overwritten unless specified in launch_arguments
+    # If the node has a parameter_file, it will be overwritten unless specified in launch_arguments
     controllers = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([ThisLaunchFileDir(), '/controllers.py']),
         launch_arguments={

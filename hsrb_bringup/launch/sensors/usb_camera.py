@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2024 TOYOTA MOTOR CORPORATION
+# Copyright (c) 2026 TOYOTA MOTOR CORPORATION
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the disclaimer
@@ -49,7 +49,7 @@ def declare_arguments():
     declared_arguments.append(
         DeclareLaunchArgument('camera_name',
                               default_value='camera',
-                              description='Camera\'s name used for namespace.'))
+                              description="Camera's name used for namespace."))
 
     return declared_arguments
 

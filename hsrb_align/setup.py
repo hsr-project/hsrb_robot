@@ -1,4 +1,4 @@
-# Copyright (c) 2025 TOYOTA MOTOR CORPORATION
+# Copyright (c) 2026 TOYOTA MOTOR CORPORATION
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the disclaimer
@@ -30,7 +30,7 @@ package_name = 'hsrb_align'
 
 setup(
     name=package_name,
-    version='2.3.0',
+    version='3.0.0',
     packages=[package_name],
     data_files=[
         (os.path.join('share', package_name), ['package.xml']),

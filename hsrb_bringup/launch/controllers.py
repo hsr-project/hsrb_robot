@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2024 TOYOTA MOTOR CORPORATION
+# Copyright (c) 2026 TOYOTA MOTOR CORPORATION
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the disclaimer
@@ -120,7 +120,7 @@ def generate_launch_description():
                                 output={'both': 'log'},
                                 remappings=[('robot_description', '/robot_description')])
 
-    motion_command_limitter_controller_spawner = create_spawner_node('motion_command_limitter_controller')
+    motion_command_limiter_controller_spawner = create_spawner_node('motion_command_limiter_controller')
     omni_base_controller_spawner = create_spawner_node('omni_base_controller')
     nodes = [control_node,
              joint_state_publisher,
@@ -129,11 +129,10 @@ def generate_launch_description():
              create_spawner_node('head_trajectory_controller'),
              create_spawner_node('arm_trajectory_controller'),
              create_spawner_node('gripper_controller'),
-             motion_command_limitter_controller_spawner,
-             set_on_process_exit_event_handler(motion_command_limitter_controller_spawner.actions[0],
+             motion_command_limiter_controller_spawner,
+             set_on_process_exit_event_handler(motion_command_limiter_controller_spawner.actions[0],
                                                omni_base_controller_spawner.actions),
              create_spawner_node('servo_diagnostic_broadcaster'),
-             create_spawner_node('drive_mode_controller'),
              create_spawner_node('servo_state_controller'),
              create_spawner_node('servo_parameter_reader'),
              create_spawner_node('servo_parameter_writer'),

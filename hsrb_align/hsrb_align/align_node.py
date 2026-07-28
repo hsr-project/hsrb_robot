@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-# Copyright (c) 2025 TOYOTA MOTOR CORPORATION
+# Copyright (c) 2026 TOYOTA MOTOR CORPORATION
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the disclaimer
@@ -135,15 +135,14 @@ def move_to_initial_pose(node):
 
 
 def wait_for_controllers(node, timeout=10.0):
-    '''wait for these controllers
+    """Wait for these controllers
 
     - arm_trajectory_controller
     - head_trajectory_controller
     - gripper_controller
     - drive_mode_controller
     - joint_state_controller
-    '''
-
+    """
     controller_client = node.create_client(ListControllers,
                                            '/controller_manager/list_controllers')
 
@@ -163,8 +162,11 @@ def wait_for_controllers(node, timeout=10.0):
         rclpy.spin_until_future_complete(node, future, timeout_sec=1.0)
         ret = future.result()
         if ret is not None:
-            running = set(
-                [controller.name for controller in ret.controller if controller.state == 'active'])
+            running = {
+                controller.name
+                for controller in ret.controller
+                if controller.state == 'active'
+            }
             if using_controllers.issubset(running):
                 return True
         time.sleep(0.1)

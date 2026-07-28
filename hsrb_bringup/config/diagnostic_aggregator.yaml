@@ -25,3 +25,7 @@
       type: diagnostic_aggregator/DiscardAnalyzer
       path: Joy
       startswith: ['joy_node:']
+    controller_manager_hw_activity:
+      type: diagnostic_aggregator/DiscardAnalyzer
+      path: ControllerManagerHW
+      contains: ['controller_manager: Hardware Components Activity']

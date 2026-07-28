@@ -1,6 +1,6 @@
 <package format="3">
   <name>hsrb_align</name>
-  <version>2.3.0</version>
+  <version>3.0.0</version>
   <description>Initial pose scripts for HSR-B</description>
 
   <maintainer email="xr-hsr-support@mail.toyota.co.jp">HSR Support</maintainer>

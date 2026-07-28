@@ -4,15 +4,13 @@ controller_manager:
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
     head_trajectory_controller:
-      type: joint_trajectory_controller/JointTrajectoryController
+      type: tmc_joint_command_controller/BasicJointCommandController
     arm_trajectory_controller:
-      type: joint_trajectory_controller/JointTrajectoryController
+      type: tmc_joint_command_controller/BasicJointCommandController
     gripper_controller:
       type: hsrb_gripper_controller/HrhGripperController
     omni_base_controller:
       type: hsrb_base_controllers/OmniBaseController
-    drive_mode_controller:
-      type: tmc_realtime_controllers/ExxxDriveModeController
     servo_state_controller:
       type: tmc_realtime_controllers/ServoStateBroadcaster
     servo_parameter_reader:
@@ -50,8 +48,6 @@ head_trajectory_controller:
     joints:
       - head_tilt_joint
       - head_pan_joint
-    command_interfaces:
-      - position
     state_interfaces:
       - position
     constraints:
@@ -60,6 +56,9 @@ head_trajectory_controller:
       head_tilt_joint:
         goal: 0.2
     open_loop_control: true
+    use_velocity_state_for_trajectory: false
+    position_control_mode: 5
+    velocity_control_mode: 3
 
 arm_trajectory_controller:
   ros__parameters:
@@ -69,14 +68,19 @@ arm_trajectory_controller:
       - arm_roll_joint
       - wrist_flex_joint
       - wrist_roll_joint
-    command_interfaces:
-      - position
     state_interfaces:
       - position
     constraints:
       stopped_velocity_tolerance: 0.5
       goal_time: 0.05
     open_loop_control: true
+    use_velocity_state_for_trajectory: false
+    position_control_mode: 5
+    velocity_control_mode: 3
+    arm_flex_joint:
+      position_control_mode: 8
+    wrist_roll_joint:
+      position_control_mode: 7
 
 gripper_controller:
   ros__parameters:
@@ -142,18 +146,6 @@ servo_parameter_reader:
       - head_pan_joint
       - hand_motor_joint
     attribute: reader
-
-drive_mode_controller:
-  ros__parameters:
-    joints:
-      - arm_lift_joint
-      - arm_flex_joint
-      - arm_roll_joint
-      - wrist_flex_joint
-      - wrist_roll_joint
-      - head_tilt_joint
-      - head_pan_joint
-    publish_rate : 10.0
 
 servo_state_controller:
   ros__parameters:
