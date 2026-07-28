@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2024 TOYOTA MOTOR CORPORATION
+# Copyright (c) 2026 TOYOTA MOTOR CORPORATION
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the disclaimer
@@ -42,7 +42,7 @@ def declare_arguments():
     declared_arguments.append(
         DeclareLaunchArgument('camera_name',
                               default_value='head_rgbd_sensor',
-                              description='Camera\'s name used for namespace.'))
+                              description="Camera's name used for namespace."))
     declared_arguments.append(
         DeclareLaunchArgument('calibration_file_directory',
                               default_value='/etc/opt/tmc/robot/conf.d/calib_results',
@@ -76,10 +76,10 @@ def generate_launch_description():
                                              ('depth/image/compressed', 'depth_registered/image/compressed'),
                                              ('depth/image/compressedDepth', 'depth_registered/image/compressedDepth'),  # noqa
                                              ('depth/image/theora', 'depth_registered/image/theora'),
-                                             ('depth/image_raw', 'depth_registered/image_raw'),
-                                             ('depth/image_raw/compressed', 'depth_registered/image_raw/compressed'),  # noqa
-                                             ('depth/image_raw/compressedDepth', 'depth_registered/image_raw/compressedDepth'),  # noqa
-                                             ('depth/image_raw/theora', 'depth_registered/image_raw/theora'),
+                                             ('depth_raw/image', 'depth_registered/image_raw'),
+                                             ('depth_raw/image/compressed', 'depth_registered/image_raw/compressed'),  # noqa
+                                             ('depth_raw/image/compressedDepth', 'depth_registered/image_raw/compressedDepth'),  # noqa
+                                             ('depth_raw/image/theora', 'depth_registered/image_raw/theora'),
                                              ('rgb/image_raw', 'rgb/image_rect_color'),
                                              ('rgb/image_raw/compressed', 'rgb/image_rect_color/compressed'),
                                              ('rgb/image_raw/compressedDepth', 'rgb/image_rect_color/compressedDepth'),

@@ -2,6 +2,15 @@
 Changelog for package hsrb_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.0.0 (2026-06-29)
+-------------------
+* Migration to ROS2 jazzy
+* Contributors: Katsushi Fukuoka, Shigeo Tsuduki, Hiroaki Yaguchi,Keisuke Takeshita
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Changelog for package hsrb_bringup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 2.3.0 (2025-12-04)
 -------------------
 * Fix to use robot-specific base controller parameters.
