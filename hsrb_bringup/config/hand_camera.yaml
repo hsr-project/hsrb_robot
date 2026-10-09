@@ -8,3 +8,4 @@
     image_width: 640
     image_height: 480
     camera_name: hand_camera
+    brightness: -1
